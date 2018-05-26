@@ -1,4 +1,7 @@
 # Performance matters
+This project serve as a testing ground for different optimalisation technique. Each technique has their own branch where the technique is applied to the project to see if there's a increase in performance. The master contain all of the technique combined. 
+
+The documentation for each technique can be found in the __AUDIT.md__ file.
 
 ## Project setup
 

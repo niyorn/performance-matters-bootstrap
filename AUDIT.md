@@ -1,0 +1,2 @@
+# Audit of the Bootstrap project
+In this documenation you'll find the result of the performance techniques that are applied to the Bootstrap project. Each section will have an audit that is taken before and after applying the technique.

@@ -1,12 +1,12 @@
 # Audit of the Bootstrap project
-In this documenation you'll find the result of the performance techniques that are applied to the Bootstrap project. Each section will have an audit that is taken before and after applying the technique.
+In this documenation you'll find the result of performance techniques that are applied to the Bootstrap project. Each section will have an audit that is taken before and after applying the technique.
 
 ## Images
-The Bootstrap project consist of a couple images that have a file at around ~170 kb.
+The Bootstrap project consist of a couple images that have a file size around ~170 kb.
 
 ![Overview of the images that are loaded](audit-assets/images-before.PNG)
 
-What we can do to increase performance is compressioning the images. For this test, [compressjpgeg](http://compressjpeg.com/nl/) is used. Compressjpeg is a site where you're able to upload your files to the site and they compressed the images for you. After that you're able to download all of the files that you've uploaded.
+What we can do to increase performance is compressing the images. For this test, [compressjpgeg](http://compressjpeg.com/nl/) is used. Compressjpeg is a site where you're able to upload your files to the site and they compressed the images for you. After that you're able to download all of the files that you've uploaded.
 
 ![Compression of images](audit-assets/images-compression.PNG)
 

@@ -65,3 +65,47 @@ As you can see on the photo, the minified proces have a more pronounce impact on
 
 ### Conclusion
 The steps taken to minify the CSS file was really easy and it have decreased the overal file size by ~21%. I recommend adding this process to your project by adding a automatic like [Uglifycss](https://www.npmjs.com/package/uglifycss) or use the tool that is used in this example before deploying.
+
+### G-Zip
+
+By performing a google audit, the audit gives us a suggestion of using G-Zip
+
+![Google audit: sugesstion](audit-assets/g-zip-google-audit.PNG)
+
+To add g-zip to our process, we're using the node module: [Compression](https://github.com/expressjs/compression). Compression is a Node.js Middleware.
+
+To add compression to our project we need to install the module.
+
+install dependencies
+```
+npm install --save compression
+```
+
+include in your main js file
+```js
+//require dependencie
+const compression = require('compression');
+const app = express();
+
+app.use(compression({filter: shouldCompress}));
+
+function shouldCompress (req, res) {
+    if (req.headers['x-no-compression']) {
+        // don't compress responses with this request header
+        return false
+    }
+    console.log('test')
+
+    // fallback to standard filter function
+    return compression.filter(req, res)
+}
+```
+
+To check our compression we're going to use:[Check Gzip Compression](https://checkgzipcompression.com/). 
+
+![Result of using G-Zip](audit-assets/g-zip-checker.PNG)
+
+According to this tool we've decrease our size by 72.1%. That's huge! Also using the compression was really simple.
+
+### Conclusion
+G-Zip can be a very usefull tool for compressing your whole project. The installation was very easy and the result was very amazing, a decrease in file size by 72.1%! I recommend using G-Zip compression in your project.

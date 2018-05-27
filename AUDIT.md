@@ -19,4 +19,22 @@ The photo below is the audit after compressioning the images. As you can see the
 
 By compressioning the images you're able to decrease the overall size by ~55%. This is really big for mobile users that have limited data plan. However compressing images by uploading to Compressjpeg takes a lot of time. I suggest using an automatic tool like [compress-images](https://www.npmjs.com/package/compress-images) or else use this tool only if the overal size of the project is getting out of hand.
 
+## CSS
 
+Bootstrap loads three CSS files on the homepage. To increase performance we can minify those file. 
+
+>This minifier removes whitespace, strips comments, combines files, and optimizes/shortens a few common programming patterns.
+And it comes with a huge test suite.  - [Minifier] (https://www.minifier.org/)
+
+*before*
+
+![Audit of CSS ](audit-assets/css-before.PNG)
+
+The tool that is used to minify CSS is [Minifier](https://www.minifier.org/). With this tool you're able to upload your CSS file to their site. After the minify process, you're able to download the minified files and add this to your project.
+
+![Audit of CSS after minifying ](audit-assets/css-after.PNG)
+
+As you can see on the photo, the minified proces have a more pronounce impact on the really big file. The Bootstrap.css file (before) have a file size of 149kb and have had a decrease of ~21% procent after the minified process. 
+
+### Conclusion
+The steps taken to minify the CSS file was really easy and it have decreased the overal file size by ~21%. I recommend adding this process to your project by adding a automatic like [Uglifycss](https://www.npmjs.com/package/uglifycss) or use the tool that is used in this example before deploying.

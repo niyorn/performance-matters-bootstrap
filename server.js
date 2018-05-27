@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const routeStatic = require('./lib/route-static');
 const redirectIndices = require('./lib/redirect-indices');
+const compression = require('compression');
 
 const app = express();
 const baseDir = 'src';
@@ -22,6 +23,18 @@ nunjucks.configure(baseDir, {
     express: app,
     watch: true
 });
+
+app.use(compression({filter: shouldCompress}));
+
+function shouldCompress (req, res) {
+    if (req.headers['x-no-compression']) {
+      // don't compress responses with this request header
+      return false
+    }
+
+    // fallback to standard filter function
+    return compression.filter(req, res)
+  }
 
 app.get('*', (req, res, next) => {
     res.render(path.join('./', req.url, 'index.html'), {});

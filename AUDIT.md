@@ -46,4 +46,22 @@ As you can see from the after photo, the file size is now ~27kb. A decrease of ~
 Subsetting your font can be a good idea to decrease file size. Subsetting is a one time process where the outcome can give a lot of benefit, although you're only able to have a WOFF and WOFF2 format. I recommend to add this process to future projects.
 
 
+## CSS
 
+Bootstrap loads three CSS files on the homepage. To increase performance we can minify those file. 
+
+>This minifier removes whitespace, strips comments, combines files, and optimizes/shortens a few common programming patterns.
+And it comes with a huge test suite.  - [Minifier] (https://www.minifier.org/)
+
+*before*
+
+![Audit of CSS ](audit-assets/css-before.PNG)
+
+The tool that is used to minify CSS is [Minifier](https://www.minifier.org/). With this tool you're able to upload your CSS file to their site. After the minify process, you're able to download the minified files and add this to your project.
+
+![Audit of CSS after minifying ](audit-assets/css-after.PNG)
+
+As you can see on the photo, the minified proces have a more pronounce impact on the really big file. The Bootstrap.css file (before) have a file size of 149kb and have had a decrease of ~21% procent after the minified process. 
+
+### Conclusion
+The steps taken to minify the CSS file was really easy and it have decreased the overal file size by ~21%. I recommend adding this process to your project by adding a automatic like [Uglifycss](https://www.npmjs.com/package/uglifycss) or use the tool that is used in this example before deploying.
